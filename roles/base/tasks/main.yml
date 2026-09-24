@@ -1,0 +1,23 @@
+---
+# tasks file for base
+- name: Update the list of pacakages (apt update) and the system
+  apt:
+    update_cache: yes
+    upgrade: dist
+    cache_valid_time: 3600
+
+- name: Install base utilities and fail2ban
+  apt: 
+    pkg: 
+      - curl 
+      - git
+      - unzip
+      - htop
+      - fail2ban
+    state: present
+
+- name: Ensure fail2ban is running and enabled 
+  service:
+    name: fail2ban
+    state: started
+    enabled: yes

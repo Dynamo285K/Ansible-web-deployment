@@ -1,0 +1,14 @@
+---
+- name: Server Configuration and Web Deployment
+  hosts: app
+  become: yes
+
+  roles:
+    - role: base
+      tags: ["base", "setup"]
+    - role: nginx
+      tags: ["nginx", "web"]
+    - role: app
+      tags: ["app", "web"]
+    - role: ssh
+      tags: ["ssh", "security"]

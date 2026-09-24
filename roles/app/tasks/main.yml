@@ -1,0 +1,12 @@
+---
+# tasks file for app
+- name: Remove defailt Nginx welcome page (only if exists)
+  file:
+    path: /var/www/html/index.nginx-debian.html
+    state: absent
+
+- name: Clone or update the  web application repository
+  git:
+    repo: https://github.com/Dynamo285K/gh-deployment-workflow.git
+    dest: /var/www/html/
+    update: yes
