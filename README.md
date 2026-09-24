@@ -1,4 +1,4 @@
-# Ansible Web Deployment 🚀
+# Ansible Web Deployment
 
 Automated provisioning and deployment of a static HTML website to an AWS EC2 instance using Ansible. 
 
